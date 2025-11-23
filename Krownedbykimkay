@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Krowned by Kim Kay | Your FAVORITE Stylist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Krowned by Kim Kay - Licensed Natural Hair Care Specialist in Charlotte, NC. Knotless braids, feed-in ponytails, twists, wigs, mens braids & more."
+  />
+
+  <style>
+    /* ---------- RESET ---------- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background: #050505;
+      color: #f8f8f8;
+      line-height: 1.5;
+    }
+    img { max-width: 100%; display: block; }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ---------- LAYOUT ---------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(5,5,5,0.96);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(14px);
+    }
+    .container {
+      width: min(1120px, 100% - 2.5rem);
+      margin: 0 auto;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 0;
+    }
+    .logo {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.9rem;
+    }
+    .logo span {
+      color: #f5c542;
+      margin-right: 0.3rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.4rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+    .nav-links a {
+      padding-bottom: 0.2rem;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #f5c542;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2.5rem;
+      align-items: center;
+      padding: 3.5rem 0 2.5rem;
+    }
+    .hero-text h1 {
+      font-size: clamp(2.2rem, 5vw, 3.1rem);
+      margin-bottom: 1rem;
+    }
+    .hero-text h1 span {
+      color: #f5c542;
+    }
+    .hero-text p {
+      max-width: 34rem;
+      color: #d1d1d1;
+      margin-bottom: 1.4rem;
+      font-size: 0.99rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #d1d1d1;
+      margin-bottom: 0.85rem;
+    }
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #35d399;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 0.6rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border-radius: 999px;
+      padding: 0.65rem 1.5rem;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg,#f5c542,#fdf5c7);
+      color: #151515;
+      font-weight: 600;
+    }
+    .btn-outline {
+      border-color: rgba(255,255,255,0.2);
+      color: #f8f8f8;
+      background: transparent;
+    }
+    .hero-small {
+      font-size: 0.78rem;
+      color: #a5a5a5;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left,#2a2a2a,#050505 65%);
+      border-radius: 1.3rem;
+      padding: 0.8rem;
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+    }
+    .hero-card-inner {
+      border-radius: 0.9rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-tag {
+      position: absolute;
+      bottom: 0.9rem;
+      left: 0.9rem;
+      background: rgba(0,0,0,0.7);
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    /* ---------- SECTION SHELL ---------- */
+    section {
+      padding: 2.8rem 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    section h2 {
+      font-size: 1.45rem;
+      margin-bottom: 0.4rem;
+    }
+    section p.section-intro {
+      color: #b0b0b0;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ---------- STYLES / GALLERY ---------- */
+    .styles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+      gap: 1.3rem;
+    }
+    .style-card {
+      background: linear-gradient(145deg,#101010,#1b1b1b);
+      border-radius: 0.9rem;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      flex-direction: column;
+    }
+    .style-card img {
+      height: 230px;
+      object-fit: cover;
+    }
+    .style-body {
+      padding: 0.8rem 0.9rem 0.9rem;
+    }
+    .style-title {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      font-size: 0.98rem;
+    }
+    .style-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #cfcfcf;
+      margin-bottom: 0.2rem;
+    }
+    .chip {
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(245,197,66,0.6);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #f5c542;
+    }
+    .style-note {
+      font-size: 0.8rem;
+      color: #9f9f9f;
+    }
+
+    /* ---------- PRICING IMAGES ---------- */
+    .pricing-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap: 1.3rem;
+    }
+    .pricing-card {
+      border-radius: 0.9rem;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: #101010;
+    }
+    .pricing-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .pricing-label {
+      padding: 0.7rem 0.9rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #cfcfcf;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* ---------- POLICY ---------- */
+    .policy-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.5fr);
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+    .policy-text ul {
+      list-style: disc;
+      padding-left: 1.05rem;
+      margin-top: 0.4rem;
+      color: #cfcfcf;
+      font-size: 0.9rem;
+    }
+    .policy-text li + li { margin-top: 0.3rem; }
+
+    .policy-img-wrap {
+      border-radius: 0.9rem;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: #101010;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 1.4rem 0 1.6rem;
+      font-size: 0.8rem;
+      color: #a1a1a1;
+    }
+    .footer-layout {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.7rem;
+      align-items: center;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 800px) {
+      nav { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 2.4rem;
+      }
+      .hero-card { order: -1; }
+      .policy-layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo"><span>👑</span>Krowned by Kim Kay</div>
+        <div class="nav-links">
+          <a href="#styles">Styles</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#policy">Policy</a>
+          <a href="#book">Book</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="container hero" id="top">
+      <div class="hero-text">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Licensed Natural Hair Care Specialist • Charlotte, NC
+        </div>
+        <h1>Your FAVORITE Stylist — <span>Kater to your Krown</span> 👑</h1>
+        <p>
+          From sleek installs to detailed knotless braids, Krowned by Kim Kay
+          provides a luxury but cozy experience for every client. Healthy hair,
+          clean parts & long-lasting styles — every single time.
+        </p>
+        <div class="hero-actions">
+          <a
+            class="btn btn-primary"
+            id="book"
+            href="https://instagram.com/krownedbykimkay"
+            target="_blank"
+            rel="noopener"
+          >
+            Book via Instagram DM
+          </a>
+          <a class="btn btn-outline" href="tel:+13153455499">
+            Call / Text: (315) 345-5499
+          </a>
+        </div>
+        <p class="hero-small">
+          Located in the University Area (near UNCC) – exact address shared upon
+          booking confirmation.
+        </p>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-inner">
+          <!-- TODO: Replace src with your favorite headshot / style photo file name in this repo -->
+          <img src="img/style-body-wave-wig.jpg" alt="Silk press / wig install by Kim Kay" />
+          <div class="hero-tag">Your Krown, Your Way ✨</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STYLES / GALLERY -->
+    <section class="container" id="styles">
+      <h2>Signature Styles</h2>
+      <p class="section-intro">
+        A few of the most-requested looks. For the full gallery & availability,
+        connect on Instagram @krownedbykimkay.
+      </p>
+
+      <div class="styles-grid">
+        <article class="style-card">
+          <img src="img/style-body-wave-wig.jpg" alt="Body wave wig install" />
+          <div class="style-body">
+            <div class="style-meta">
+              <p class="style-title">Frontal / Closure Wig Install</p>
+              <span class="chip">Adult</span>
+            </div>
+            <p class="style-note">Install only – hair not included. Includes braid-down & basic styling.</p>
+          </div>
+        </article>
+
+        <article class="style-card">
+          <img src="img/style-knotless-braids.jpg" alt="Small knotless braids" />
+          <div class="style-body">
+            <div class="style-meta">
+              <p class="style-title">Small Knotless Braids</p>
+              <span class="chip">Adult</span>
+            </div>
+            <p class="style-note">
+              Clean parts, lightweight & flexible. Base price set for back-length (bra-strap).
+            </p>
+          </div>
+        </article>
+
+        <article class="style-card">
+          <img src="img/style-island-twists.jpg" alt="Island twists with curls" />
+          <div class="style-body">
+            <div class="style-meta">
+              <p class="style-title">Island Twists</p>
+              <span class="chip">Adult</span>
+            </div>
+            <p class="style-note">
+              Flowy twists with curly ends. Perfect vacation / everyday glam style.
+            </p>
+          </div>
+        </article>
+
+        <article class="style-card">
+          <img src="img/style-boho-braids.jpg" alt="Boho knotless braids" />
+          <div class="style-body">
+            <div class="style-meta">
+              <p class="style-title">Boho Knotless / Boho Braids</p>
+              <span class="chip">Adult</span>
+            </div>
+            <p class="style-note">
+              Mix of braids & curls for a soft, effortless look. Synthetic or human boho hair options.
+            </p>
+          </div>
+        </article>
+
+        <article class="style-card">
+          <img src="img/style-feed-in-cornrows.jpg" alt="Feed-in braids with curls" />
+          <div class="style-body">
+            <div class="style-meta">
+              <p class="style-title">Feed-In Cornrows / Ponytail</p>
+              <span class="chip">Adult</span>
+            </div>
+            <p class="style-note">
+              Smooth feed-ins with optional curly or straight ends. Great for gym & everyday wear.
+            </p>
+          </div>
+        </article>
+
+        <article class="style-card">
+          <img src="img/style-mens-cornrows.jpg" alt="Mens cornrow braids" />
+          <div class="style-body">
+            <div class="style-meta">
+              <p class="style-title">Mens Braids</p>
+              <span class="chip">Mens</span>
+            </div>
+            <p class="style-note">
+              Clean, crisp cornrows with complementary wash included on all men’s styles.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRICING (IMAGE MENUS) -->
+    <section class="container" id="pricing">
+      <h2>Pricing Menu</h2>
+      <p class="section-intro">
+        Pricing is based on current length & density. Please review the full price lists
+        below – all final quotes are confirmed at booking.
+      </p>
+
+      <div class="pricing-images">
+        <div class="pricing-card">
+          <!-- TODO: upload and rename file to match src below -->
+          <img src="img/prices-knotless-box-feed-in.jpg" alt="Knotless braids, box braids, island twists, feed-in ponytail & more price list" />
+          <div class="pricing-label">Knotless • Box Braids • Island Twists • Feed-In Styles</div>
+        </div>
+
+        <div class="pricing-card">
+          <img src="img/prices-natural-locs-mens-addons.jpg" alt="Natural hair, locs, wigs, mens braids and add-on services price list" />
+          <div class="pricing-label">Natural Hair • Locs • Wigs / Weaves • Mens Braids • Add-Ons</div>
+        </div>
+
+        <div class="pricing-card">
+          <img src="img/prices-kids-styles.jpg" alt="Kids styles price list" />
+          <div class="pricing-label">Kids Styles</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING POLICY -->
+    <section class="container" id="policy">
+      <h2>Booking Policy</h2>
+      <p class="section-intro">
+        Please read the full policy before booking to keep everything smooth for you and your stylist.
+      </p>
+
+      <div class="policy-layout">
+        <div class="policy-text">
+          <p><strong>Key Points:</strong></p>
+          <ul>
+            <li>$30 non-refundable deposit required to secure your appointment (goes toward your total).</li>
+            <li>Arrive with hair freshly washed & detangled or add a shampoo/blow-dry service.</li>
+            <li>No additional guests – please come alone and on time for your appointment.</li>
+            <li>15+ minutes late may result in a late fee; 20+ minutes late may require rescheduling + new deposit.</li>
+            <li>Rescheduling allowed up to 48 hours in advance. Same-day cancellations / no-shows are subject to fees.</li>
+            <li>Payments accepted: Cash, CashApp, Apple Pay.</li>
+          </ul>
+          <p style="margin-top:0.8rem; font-size:0.88rem; color:#bdbdbd;">
+            Full detailed booking information is also available on Instagram highlights under
+            <strong>Policy👑</strong>.
+          </p>
+        </div>
+
+        <div class="policy-img-wrap">
+          <!-- TODO: upload and rename file to match src below -->
+          <img src="img/booking-policy.jpg" alt="Updated booking policy flyer" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-layout">
+      <p>© <span id="year"></span> Krowned by Kim Kay. All rights reserved.</p>
+      <p>Book via Instagram DM: <strong>@krownedbykimkay</strong></p>
+    </div>
+  </footer>
+
+  <script>
+    // set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
